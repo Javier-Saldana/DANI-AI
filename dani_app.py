@@ -12,7 +12,16 @@ st.set_page_config(page_title="Dani - AI Gas Classifier", layout="centered")
 image = Image.open("avatar_dani.png")
 st.image(image, width=120)
 st.title("🤖 Dani - AI Gas Classifier")
-st.write("Simulate sensor readings below and let Dani identify the gas.")
+st.markdown("""
+Meet **Dani** — your AI-based digital engineer trained to monitor and manage the PROMEX M41 reactor.
+
+Dani doesn’t sleep, doesn’t blink, and never misses an anomaly.
+
+Powered by AI  
+Reads raw MQ sensor fingerprints  
+Detects gas type in real time  
+""")
+
 
 # Sliders for sensor input
 s1 = st.slider("MQ8_1", 0, 4095, 1000)
@@ -32,3 +41,14 @@ st.markdown(f"### 🧠 Predicted Gas: **`{prediction.upper()}`**")
 st.write("Prediction Confidence:")
 for label, p in zip(model.classes_, proba):
     st.write(f"- **{label}**: {round(p*100, 2)}%")
+st.sidebar.title("About Dani")
+st.sidebar.markdown("""
+**DANI**   
+Version: `1.0`
+
+Developed by **Promex Technologies, Inc.**, Dani is a reactor-class AI trained on real gas data using low-cost sensors.
+
+Dani replaces expensive hardware with machine-learned gas fingerprints.
+
+Built for the future of industrial clean energy.
+""")
