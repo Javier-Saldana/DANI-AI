@@ -29,9 +29,8 @@ Meet **Dani** — your AI-based digital engineer trained to monitor and manage t
 Dani doesn’t sleep, doesn’t blink, and never misses an anomaly.
 
 🧠 Powered by AI  
-📟 Reads raw MQ sensor fingerprints  
-🧪 Detects gas type in real time
-""")
+📟 Keeps M41 working at optimal conditions 
+🧪 Prevents failure
 
 # Sliders for simulated sensor input
 s1 = st.slider("MQ8_1", 0, 4095, 1000)
@@ -88,9 +87,9 @@ st.sidebar.markdown("""
 **DANI**  
 Version: `1.0`
 
-Developed by **Promex Technologies, Inc.**, Dani is a reactor-class AI trained on real gas data using low-cost sensors.
+Developed by **Promex Technologies, Inc.**, Dani is a reactor-class AI trained to monitor and maintain the M41 reactor at optimal performance.
 
-Dani replaces expensive hardware with machine-learned gas fingerprints.
+Dani uses machine learning to replace expensive infrared sensors with simple, low-cost alternatives — making the total cost of the M41 reactor approximately **5%** of what it would be without AI.
 
-Built for the future of industrial clean energy.
+Built for a decarbonized future.
 """)
