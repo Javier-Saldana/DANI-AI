@@ -89,7 +89,8 @@ Version: `1.0`
 
 Developed by **Promex Technologies, Inc.**, Dani is a reactor-class AI trained to monitor and maintain the M41 reactor at optimal performance.
 
-Dani uses machine learning to replace expensive infrared sensors with simple, low-cost alternatives — making the total cost of the M41 reactor approximately **5%** of what it would be without AI.
+Dani uses machine learning to replace expensive infrared sensors with simple, low-cost alternatives - making the total cost of the M41 reactor approximately **5%** of what it would be without AI.
+
 
 Built for a decarbonized future.
 """)
