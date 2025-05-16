@@ -22,6 +22,13 @@ Reads raw MQ sensor fingerprints
 Detects gas type in real time  
 """)
 
+# Load Promex logo
+logo = Image.open("promex_logo.png")
+col1, col2 = st.columns([1, 6])
+with col1:
+    st.image(logo, width=80)
+with col2:
+    st.markdown("## ")  # spacing fix
 
 # Sliders for sensor input
 s1 = st.slider("MQ8_1", 0, 4095, 1000)
