@@ -54,6 +54,34 @@ st.markdown("Confidence Levels:")
 for label, p in zip(model.classes_, proba):
     st.write(f"- **{label}**: {round(p*100, 2)}%")
 
+# --- Simulated Billing Section ---
+st.markdown("---")
+st.subheader("💸 Simulated Billing")
+
+st.markdown("#### Site: Promex Pilot Facility – Aguascalientes")
+st.markdown("**Reactors Online:** 3")
+
+# Simulated data (you can later make this dynamic)
+reactor_data = {
+    "Reactor 1": 2.35,  # kg CO2 converted
+    "Reactor 2": 3.12,
+    "Reactor 3": 1.87
+}
+price_per_kg = 0.40  # USD
+
+# Display each reactor
+total_co2 = 0
+for name, kg in reactor_data.items():
+    st.write(f"- {name}: {kg} kg CO₂ converted today")
+    total_co2 += kg
+
+# Billing summary
+total_cost = total_co2 * price_per_kg
+st.markdown(f"**Total CO₂ converted:** `{round(total_co2, 2)} kg`")
+st.markdown(f"**Billing Rate:** `${price_per_kg:.2f} USD/kg`")
+st.markdown(f"**Estimated Daily Cost:** `${total_cost:.2f}`")
+
+
 # Sidebar with Dani info
 st.sidebar.title("About Dani")
 st.sidebar.markdown("""
