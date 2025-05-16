@@ -9,7 +9,7 @@ model = joblib.load("dani_model.pkl")
 
 # UI layout
 st.set_page_config(page_title="Dani - AI Gas Classifier", layout="centered")
-image = Image.open("dani_avatar.png")
+image = Image.open("avatar_dani.png")
 st.image(image, width=120)
 st.title("🤖 Dani - AI Gas Classifier")
 st.write("Simulate sensor readings below and let Dani identify the gas.")
