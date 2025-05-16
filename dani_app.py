@@ -58,7 +58,7 @@ for label, p in zip(model.classes_, proba):
 st.markdown("---")
 st.subheader("💸 Simulated Billing")
 
-st.markdown("#### Site: Promex Pilot Facility – Aguascalientes")
+st.markdown("#### Site: Promex Pilot Facility – Birmingham, Alabama")
 st.markdown("**Reactors Online:** 3")
 
 # Simulated data (you can later make this dynamic)
