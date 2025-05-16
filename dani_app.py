@@ -7,13 +7,6 @@ from PIL import Image
 # Load trained model
 model = joblib.load("dani_model.pkl")
 
-# Load Promex logo
-logo = Image.open("promex_logo.png")
-col1, col2 = st.columns([1, 6])
-with col1:
-    st.image(logo, width=80)
-with col2:
-    st.markdown("## ")  # spacing fix
 # UI layout
 st.set_page_config(page_title="Dani - AI Gas Classifier", layout="centered")
 image = Image.open("avatar_dani.png")
