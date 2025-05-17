@@ -3,6 +3,33 @@ import joblib
 import numpy as np
 from PIL import Image
 
+st.markdown("---")
+st.markdown("<h3 style='color:#FF9800'>🛰️ Reactor Monitoring Dashboard</h3>", unsafe_allow_html=True)
+
+# Simulated reactor data
+reactors = [
+    {"name": "Reactor 1", "status": "🟢 Stable", "co2": 2.31, "note": "Normal operation"},
+    {"name": "Reactor 2", "status": "🟡 Warning", "co2": 1.45, "note": "Sensor drift detected"},
+    {"name": "Reactor 3", "status": "🔴 Error", "co2": 0.00, "note": "No response detected"},
+]
+
+# Show reactor cards
+total_co2 = 0
+for reactor in reactors:
+    st.markdown(f"""
+    <div style='border:1px solid #ddd;padding:10px;border-radius:8px;margin-bottom:10px'>
+        <strong>{reactor['status']} {reactor['name']}</strong><br>
+        CO₂ Converted: <strong>{reactor['co2']} kg</strong><br>
+        <i>{reactor['note']}</i>
+    </div>
+    """, unsafe_allow_html=True)
+    total_co2 += reactor['co2']
+
+# Summary
+st.markdown(f"### 🧠 Status Summary")
+st.markdown(f"**Reactors Online:** 2 / 3")
+st.markdown(f"**Estimated Total CO₂ Converted Today:** `{round(total_co2, 2)} kg`")
+
 # Load trained model
 model = joblib.load("dani_model.pkl")
 
