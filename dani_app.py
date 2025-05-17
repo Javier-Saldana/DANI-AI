@@ -19,10 +19,11 @@ with col2:
 
 # Load and show Dani's avatar
 image = Image.open("avatar_dani.png")
-st.image(image, width=120)
+col1, col2, col3 = st.columns([1, 2, 1])
+with col2:
+    st.image(image, width=120)
+    st.markdown("<h2 style='text-align: center;'>🤖 Dani – AI Gas Classifier</h2>", unsafe_allow_html=True)
 
-# Title and introduction
-st.title("🤖 Dani - AI Gas Classifier")
 st.markdown("""
 Meet **Dani** — your AI-based digital engineer trained to monitor and manage the PROMEX M41 reactor.
 
