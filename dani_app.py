@@ -13,23 +13,6 @@ reactors = [
     {"name": "Reactor 3", "status": "🔴 Error", "co2": 0.00, "note": "No response detected"},
 ]
 
-# Show reactor cards
-total_co2 = 0
-for reactor in reactors:
-    st.markdown(f"""
-    <div style='border:1px solid #ddd;padding:10px;border-radius:8px;margin-bottom:10px'>
-        <strong>{reactor['status']} {reactor['name']}</strong><br>
-        CO₂ Converted: <strong>{reactor['co2']} kg</strong><br>
-        <i>{reactor['note']}</i>
-    </div>
-    """, unsafe_allow_html=True)
-    total_co2 += reactor['co2']
-
-# Summary
-st.markdown(f"### 🧠 Status Summary")
-st.markdown(f"**Reactors Online:** 2 / 3")
-st.markdown(f"**Estimated Total CO₂ Converted Today:** `{round(total_co2, 2)} kg`")
-
 # Load trained model
 model = joblib.load("dani_model.pkl")
 
@@ -88,6 +71,23 @@ st.markdown(f"""
 st.markdown("Confidence Levels:")
 for label, p in zip(model.classes_, proba):
     st.write(f"- **{label}**: {round(p*100, 2)}%")
+
+# Show reactor cards
+total_co2 = 0
+for reactor in reactors:
+    st.markdown(f"""
+    <div style='border:1px solid #ddd;padding:10px;border-radius:8px;margin-bottom:10px'>
+        <strong>{reactor['status']} {reactor['name']}</strong><br>
+        CO₂ Converted: <strong>{reactor['co2']} kg</strong><br>
+        <i>{reactor['note']}</i>
+    </div>
+    """, unsafe_allow_html=True)
+    total_co2 += reactor['co2']
+
+# Summary
+st.markdown(f"### 🧠 Status Summary")
+st.markdown(f"**Reactors Online:** 2 / 3")
+st.markdown(f"**Estimated Total CO₂ Converted Today:** `{round(total_co2, 2)} kg`")
 
 # --- Simulated Billing Section ---
 st.markdown("---")
