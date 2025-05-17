@@ -49,8 +49,15 @@ proba = model.predict_proba(features)[0]
 
 # Display prediction results
 st.markdown("---")
-st.subheader("🧠 Prediction Engine")
-st.markdown(f"### Predicted Gas: **`{prediction.upper()}`**")
+st.markdown("---")
+st.markdown("<h3 style='color:#4CAF50'>🧠 Prediction Engine</h3>", unsafe_allow_html=True)
+
+st.markdown(f"""
+<div style='padding:10px;background-color:#f0f0f0;border-radius:10px;margin-bottom:10px'>
+    <h4>Predicted Gas: <span style='color:#2196F3'>{prediction.upper()}</span></h4>
+</div>
+""", unsafe_allow_html=True)
+
 st.markdown("Confidence Levels:")
 for label, p in zip(model.classes_, proba):
     st.write(f"- **{label}**: {round(p*100, 2)}%")
