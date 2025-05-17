@@ -31,6 +31,7 @@ Dani doesn’t sleep, doesn’t blink, and never misses an anomaly.
 🧠 Powered by AI  
 📟 Keeps M41 working at optimal conditions 
 🧪 Prevents failure
+""")
 
 # Sliders for simulated sensor input
 s1 = st.slider("MQ8_1", 0, 4095, 1000)
