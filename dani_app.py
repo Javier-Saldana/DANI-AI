@@ -84,7 +84,7 @@ st.markdown(f"**Estimated Daily Cost:** `${total_cost:.2f}`")
 # Sidebar with Dani info
 st.sidebar.title("About Dani")
 st.sidebar.markdown("""
-**DANI**  
+DANI  
 Version: `1.0`
 
 Developed by **Promex Technologies, Inc.**, Dani is a reactor-class AI trained to monitor and maintain the M41 reactor at optimal performance.
